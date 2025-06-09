@@ -1,0 +1,62 @@
+<RCC>
+  <qresource prefix="background_file">
+    <file>imgs/背景油画.jpg</file>
+    <file>imgs/东大图片.jpg</file>
+    <file>imgs/虚化图片.jpg</file>
+    <file>imgs/东大梧桐树.jpg</file>
+    <file>imgs/背景油画.jpg</file>
+    <file>imgs/办事大厅.jpg</file>
+    <file>imgs/绿色1.jpg</file>
+    <file>imgs/绿色2.jpg</file>
+    <file>imgs/绿色2模糊.jpg</file>
+    <file>imgs/云.png</file>
+    <file>imgs/透明绿色.jpg</file>
+    <file>imgs/片.jpg</file>
+    <file>imgs/片.png</file>
+    <file>imgs/修改绿色.jpg</file>
+    <file>imgs/竖屏绿色.jpg</file>
+    <file>imgs/校徽图.jpg</file>
+    <file>imgs/礼堂花.jpg</file>
+  </qresource>
+  <qresource prefix="logo_file">
+    <file>imgs/seu_logo.png</file>
+    <file>imgs/底图.png</file>
+    <file>imgs/透明logo.png</file>
+    <file>imgs/上下logo.png</file>
+    <file>imgs/上下透明logo.png</file>
+    <file>imgs/白色底板.png</file>
+    <file>imgs/方形绿色底板.png</file>
+    <file>imgs/止于至善透明.jpg</file>
+    <file>imgs/太宰.jpg</file>
+    <file>imgs/模糊四牌楼体育馆油画.jpg</file>
+    <file>imgs/模糊四牌楼图书馆油画.jpg</file>
+    <file>imgs/模糊图书馆油画.jpg</file>
+    <file>imgs/模糊大礼堂油画.jpg</file>
+    <file>imgs/模糊背景油画.jpg</file>
+  </qresource>
+  <qresource prefix="logo_file">
+    <file>imgs/统计.png</file>
+    <file>imgs/退出.png</file>
+    <file>imgs/close.png</file>
+    <file>imgs/用户.png</file>
+    <file>imgs/班级.png</file>
+    <file>imgs/摄像机.png</file>
+    <file>imgs/welcome.png</file>
+  </qresource>
+  <qresource prefix="new_icon">
+    <file>imgs/icon/绿色班级.png</file>
+    <file>imgs/icon/透明个人.png</file>
+    <file>imgs/icon/透明培训班级.png</file>
+    <file>imgs/icon/透明班级列表.png</file>
+    <file>imgs/icon/透明监控.png</file>
+    <file>imgs/icon/透明close.png</file>
+    <file>imgs/icon/透明统计.png</file>
+    <file>imgs/icon/透明返回.png</file>
+    <file>imgs/icon/透明退出.png</file>
+    <file>imgs/icon/女.png</file>
+    <file>imgs/icon/男.png</file>
+    <file>imgs/icon/商务男士.png</file>
+    <file>imgs/icon/下一个.png</file>
+    <file>imgs/icon/上一个.png</file>
+  </qresource>
+</RCC>

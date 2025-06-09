@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 100%"></div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+<script type="text/javascript">
+    // var classIds = {{ classIds | tojson }};
+    // var dates = {{ dates | tojson | safe }};
+    // var scores = {{ scores | tojson | safe }};
+
+    var classIds = JSON.parse('{{ classIds | tojson | safe }}');
+    var dates = JSON.parse('{{ dates | tojson | safe }}');
+    var scores = JSON.parse('{{ scores | tojson | safe }}');
+
+    // // 直接硬编码数据
+    // var classIds = ["ClassA", "ClassB", "ClassC","ClassD"];
+    // var dates = ["2023-09-01", "2023-09-02", "2023-09-03", "2023-09-04"];
+    // var scores = [
+    //         [85, 92, 78, 88],
+    //         [77, 89, 93, 81],
+    //         [90, 91, 87, 95],
+    //         [100, 100, 100, 100]
+    //     ];
+
+
+
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+
+    var option;
+
+    option = {
+        legend: {},
+        tooltip: {
+            trigger: 'axis',
+            showContent: false
+        },
+        dataset: {
+            source: [['product'].concat(dates)].concat(scores.map(function (item, index) {
+                return [classIds[index]].concat(item);
+            }))
+        },
+        xAxis: { type: 'category' },
+        yAxis: { gridIndex: 0 },
+        grid: { top: '55%' },
+        series: [
+            { type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: { focus: 'series' },
+            // 设置折线图的颜色
+            lineStyle: {
+                color: '#FF826c' // 可以使用颜色名称或十六进制颜色代码
+            } },
+            { type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: { focus: 'series' },
+            // 设置折线图的颜色
+            lineStyle: {
+                color: '#FFC05F' // 可以使用颜色名称或十六进制颜色代码
+            } },
+            { type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: { focus: 'series' },
+            // 设置折线图的颜色
+            lineStyle: {
+                color: '#3196E2' // 可以使用颜色名称或十六进制颜色代码
+            } },
+            // { type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: { focus: 'series' },
+            // // 设置折线图的颜色
+            // lineStyle: {
+            //     color: '#53D2DC' // 可以使用颜色名称或十六进制颜色代码
+            // } },
+            {
+                type: 'pie',
+                id: 'pie',
+                radius: '30%',
+                center: ['50%', '25%'],
+                emphasis: { focus: 'data' },
+                label: {
+                    formatter: '{b}: {@2012} ({d}%)'
+                },
+                encode: {
+                    itemName: 'product',
+                    value: '2012',
+                    tooltip: '2012'
+                },
+                // 设置饼图的颜色
+                color: ['#FF826c', '#FFC05F', '#3196E2', '#53D2DC']
+            }
+        ]
+    };
+
+    myChart.on('updateAxisPointer', function (event) {
+        var xAxisInfo = event.axesInfo[0];
+        if (xAxisInfo) {
+            var dimension = xAxisInfo.value + 1;
+            myChart.setOption({
+                series: {
+                    id: 'pie',
+                    label: {
+                        formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+                    },
+                    encode: {
+                        value: dimension,
+                        tooltip: dimension
+                    }
+                }
+            });
+        }
+    });
+
+    myChart.setOption(option);
+</script>
+</body>
+</html>

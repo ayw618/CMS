@@ -1,0 +1,8 @@
+pyQt5
+PyQt5-tools
+flask
+flask-cors
+flask-SQLAlchemy
+pymysql
+matplotlib
+datetime
